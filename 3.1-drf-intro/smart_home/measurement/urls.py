@@ -1,5 +1,8 @@
 from django.urls import path
+from .views import CreateMeasurementView, LCRUSensorsView
 
 urlpatterns = [
-    # TODO: зарегистрируйте необходимые маршруты
+    path('sensors/<pk>/', LCRUSensorsView.as_view()),
+    path('sensors/', LCRUSensorsView.as_view()),
+    path('measurements/', CreateMeasurementView.as_view()),
 ]
